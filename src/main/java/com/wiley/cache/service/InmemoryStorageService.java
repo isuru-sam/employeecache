@@ -28,9 +28,9 @@ public class InmemoryStorageService implements StorageService {
 	public ObjectEntry getFromCache(Object key) {
 		// TODO Auto-generated method stub
 		ObjectEntry oe = cacheMap.get(key);
-		if(oe!=null) {
-		oe.setAccessCount(oe.getAccessCount() + 1);
-		oe.setLastAccessedDate(new Date());
+		if (oe != null) {
+			oe.setAccessCount(oe.getAccessCount() + 1);
+			oe.setLastAccessedDate(new Date());
 		}
 		return oe;
 	}
@@ -39,7 +39,7 @@ public class InmemoryStorageService implements StorageService {
 	public Object getOldestKey() {
 		// TODO Auto-generated method stub
 		int i = 0;
-		
+
 		for (Map.Entry<Object, ObjectEntry> entry : cacheMap.entrySet()) {
 			return entry.getKey();
 		}
@@ -91,14 +91,12 @@ public class InmemoryStorageService implements StorageService {
 
 		for (Map.Entry<Object, ObjectEntry> entry : cacheMap.entrySet()) {
 			Date date = entry.getValue().getLastAccessedDate();
-			if (date.compareTo(oldest)<0) {
-				oldest=date;
+			if (date.compareTo(oldest) < 0) {
+				oldest = date;
 				key = entry.getKey();
 			}
 		}
 		return key;
 	}
-	
-	
 
 }

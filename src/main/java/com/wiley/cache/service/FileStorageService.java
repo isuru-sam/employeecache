@@ -11,12 +11,11 @@ import com.wiley.cache.dto.RootObject;
 public class FileStorageService implements StorageService {
 	@Value("${fileMaxSize}")
 	public Integer maxSize;
-	
 
 	@Override
 	public void putToCache(Object key, ObjectEntry value) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -33,7 +32,7 @@ public class FileStorageService implements StorageService {
 	@Override
 	public void removeFromCache(Object key) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -65,6 +64,5 @@ public class FileStorageService implements StorageService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	
+
 }
